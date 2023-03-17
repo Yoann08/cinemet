@@ -1,0 +1,39 @@
+/* variable css */
+.font-title {
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+.font-text {
+    font-family: 'Montserrat', sans-serif; 
+}
+/* fin de l'appel */
+
+/* page d'accueil */
+body {
+    background-color: black;
+}
+
+/* Navbar */
+.navbar-brand img {
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (max-width: 992px) 
+{
+   .navbar-brand img {
+    display: none;
+   }  
+}
+/* fin de la navbar */
+
+/* bannière */
+#banner {
+    background-color: #14213D
+}    
+/* fin de la bannière */
+
+
+
+/* Fin de la page d'accueil */
