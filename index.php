@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./asset/css/reset.css">
+    <link rel="stylesheet" href="../../cinemet/asset/css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="../../cinemet/asset/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
     <title>Cinemet</title>
 </head>
 
 <body>
+  <header>
 
     <?php
-        include './content/navbar.php';
+        include 'C:\wamp64\www\cinemet\content/navbar.php';
     ?>
+
+    <!-- parallax -->
+    
+    <!-- fin du parallax -->
 
 <!-- Début du caroussel -->
 <div
@@ -94,6 +99,9 @@
   </div>
 <!-- fin du carroussel -->
 
+</header>
+
+
 <!-- Début Bannière -->
     <div class="container-fluid text-light my-4" id="banner">
         <div class="d-flex justify-content-center pt-4">
@@ -107,11 +115,13 @@
 
 <!-- Affiche de film -->
 <div class="d-flex flex-wrap">
+  <a href="../cinemet/content/film.php">
     <img src="./asset/img/blade.jpg"
     class="bd-placeholder-img img-thumbnail m-2"
     width="200"
     height="300">
     </img>
+  </a>
   <img src="./asset/img/blade.jpg"
     class="bd-placeholder-img img-thumbnail m-2"
     width="200"
@@ -210,15 +220,10 @@
 </div> 
 <!-- Fin des Affiches de film -->
 
-<!-- Début Bannière -->
-<div class="container-fluid text-light my-4" id="banner">
-        <div class="d-flex justify-content-center p-5">
-            <h2 class="font-title">Liens Utiles</h2>
-        </div>
-    </div>
-<!-- Fin Bannière -->
-
-
+<!-- footer -->
+<?php
+  include 'C:\wamp64\www\cinemet\content/footer.php';
+?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
