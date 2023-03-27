@@ -1,3 +1,4 @@
+<? session_start() ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,12 +34,14 @@
 
 <div class="d-flex justify-content-center my-5">
     
-    <form class="w-50">
-
+    <form class="w-50" 
+    method="POST"
+    action="../traitement/traitement_inscription.php">
       <div class="my-5">
         <div class="mb-4">
           <input
-            type="name"
+            type="text"
+            name="nom"
             class="form-control"
             id="exampleInputEmail1"
             placeholder="Nom"
@@ -46,7 +49,8 @@
         </div>
         <div class="mb-4">
           <input
-            type="lastname"
+            type="text"
+            name="prenom"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="Prénom"
@@ -54,7 +58,8 @@
         </div>
         <div class="mb-4">
           <input
-            type="surname"
+            type="text"
+            name="pseudo"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="Pseudo"
@@ -63,6 +68,7 @@
         <div class="mb-4">
           <input
             type="email"
+            name="email"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="E-mail"
@@ -71,6 +77,7 @@
         <div class="mb-4">
           <input
             type="password"
+            name="password"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="Mot de passe"
@@ -79,6 +86,7 @@
         <div class="mb-4">
           <input
             type="password"
+            name="repeatpassword"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="Confirmer Mot de passe"
@@ -88,7 +96,7 @@
       </div>
 
       <div class="d-flex justify-content-center">
-        <a href="../../cinemet/content/login.php" type="submit" class="btn btn-primary w-50">Continuer</a>
+        <button type="submit" name="submit" class="btn btn-primary w-50">Continuer</button>
       </div>
 
     </form>
