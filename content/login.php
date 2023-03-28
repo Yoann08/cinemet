@@ -1,3 +1,4 @@
+<? session_start() ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,12 +34,16 @@
 
 <div class="d-flex justify-content-center my-5">
     
-    <form class="w-50">
+    <form 
+      class="w-50" 
+      method="POST" 
+      action="../traitement/traitement_login.php">
 
       <div class="my-5">
         <div class="mb-4">
           <input
             type="email"
+            name="email"
             class="form-control"
             id="exampleInputEmail1"
             placeholder="Votre e-mail"
@@ -47,6 +52,7 @@
         <div class="mb-2">
           <input
             type="password"
+            name="password"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="Mot de passe"
@@ -56,7 +62,7 @@
       </div>
 
       <div class="d-flex justify-content-center mb-5">
-        <a href="../../cinemet/content/profil.php" type="submit" class="btn btn-primary w-50">Se connecter</a>
+        <button type="submit" name="submit" class="btn btn-primary w-50">Se connecter</button>
       </div>
 
     </form>
