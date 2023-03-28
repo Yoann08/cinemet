@@ -1,56 +1,65 @@
 <?php
 include '../../cinemet/asset/config/connect.php';
-// var_dump($_POST);
 
-if(isset($_POST['submit'])) {
+if($_POST) {
+$nom =htmlspecialchars($_POST['nom']);
+$prenom =htmlspecialchars($_POST['prenom']);
+$pseudo =htmlspecialchars($_POST['pseudo']);
+$email =htmlspecialchars($_POST['email']);
+$password =htmlspecialchars($_POST['password']);
+$reapeatpassword =htmlspecialchars($_POST['password']);
+$submit = $_POST;
+
+if (isset($_POST)) {
 
 $errors = array();
 
-if(empty($_POST['nom']) && !preg_match('/^[a-zA-Z]+$/',$_POST['nom'])){
+if(empty($nom) && !preg_match('/^[a-zA-Z]+$/',$nom)){
     $errors['nom']="Le nom est incorect";
 }
 
-if(empty($_POST['prenom']) || !preg_match('/^[a-zA-Z]+$/',$_POST['prenom'])){
+if(empty($prenom) || !preg_match('/^[a-zA-Z]+$/',$prenom)){
     $errors['prenom']="Le prenom est incorect";
 }
 
-if(empty($_POST['pseudo']) || !preg_match('/^[a-zA-Z0-9_]+$/',$_POST['pseudo'])){
+if(empty($pseudo) || !preg_match('/^[a-zA-Z0-9_]+$/',$pseudo)){
     $errors['pseudo']="Le pseudo est incorect";
 }else{
     // verif_pseudo();
-    $ver=$conn->prepare("SELECT Id_Utilisateurs FROM utilisateurs WHERE pseudo= ? ");
-    $ver->execute([$_POST['pseudo']]);
-    $pseudo=$ver->fetch();
-    if($pseudo){
+    $verif_pseudo=$conn->prepare("SELECT Id_Utilisateurs FROM utilisateurs WHERE pseudo = :pseudo");
+    $verif_pseudo->execute(['pseudo'=>$pseudo]);
+    $pseudoFind=$verif_pseudo->fetch(); 
+ 
+    if($pseudoFind){
         $errors['pseudo']="Le pseudo existe deja";
     }
 
 }
 
-if(empty($_POST['email']) || !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
+if(empty($email) || !filter_var($email,FILTER_VALIDATE_EMAIL)){
     $errors['email']="L'email est incorect";
 }else{
     // verif_mail();
-    $veremail=$conn->prepare("SELECT Id_Utilisateurs FROM utilisateurs WHERE email= ? ");
-    $veremail->execute([$_POST['email']]);
-    $email=$veremail->fetch();
-    if($email){
+    $verif_email=$conn->prepare("SELECT Id_Utilisateurs FROM utilisateurs WHERE email = :email");
+    $verif_email->execute(['email'=>$email]);
+    $emailFind=$verif_email->fetch();
+    if($emailFind){
         $errors['email']="L'adresse mail existe deja";
     }
 }
 
-
-
-if(empty($_POST['password']) || $_POST['password']!=$_POST['repeatpassword'] || !preg_match('/^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/',$_POST['password']))
+if(empty($password) || $password!=$reapeatpassword || !preg_match('/^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/',$password));
 
 if(empty($errors)){
     // add_user();
     $id_role = 2;
-    $password=password_hash($_POST['password'],PASSWORD_BCRYPT);
+    $password=password_hash($password,PASSWORD_BCRYPT);
     $req=$conn->prepare("INSERT INTO `utilisateurs`(`nom`, `prenom`, `pseudo`, `email`, `password`, `Id_role`) VALUES (?, ?, ?, ?, ?, ?)");
-    $req->execute([$_POST['nom'], $_POST['prenom'], $_POST['pseudo'], $_POST['email'],$password, $id_role]);
+    $req->execute([$nom, $prenom, $pseudo, $email ,$password, $id_role]);
     echo "<p>inscription reussie</p>";
     header('location: ../../../../cinemet/content/login.php');
+}
+
 }
 
 }
