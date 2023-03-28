@@ -15,9 +15,10 @@ if($_POST) {
         $pass_email = $email_find ["password"];
         $find_email = $email_find ['email']; 
         
-        if((password_verify($password, $pass_email))) {
+        if((password_verify($password, $pass_email))) {          
             $_SESSION['id'] = $email_find['Id_Utilisateurs'];
             $_SESSION['pseudo'] = $email_find['pseudo'];
+            $_SESSION['Id_role'] = $email_find['Id_role'];
             header('Location: ../index.php');
         } else 
         echo "Mot de passe invalide";

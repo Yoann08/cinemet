@@ -21,18 +21,45 @@
                         <a href="../../cinemet/content/contact.php" class="nav-link font-text text-light">Contact</a>
                     </li>
                 </ul>
-                <div class="ms-auto d-flex align-items-center">
+                <?php
+
+                if(isset($_SESSION['id'])) { 
+
+                    if(isset($_SESSION['Id_role'])) {
+                        if($_SESSION['Id_role'] == 1){ ?>
+                           <div class="dropdown">
+                            <button class="btn text-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <?= $_SESSION['pseudo'] ?>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../../cinemet/content/profil.php">Mon Profil</a></li>
+                                <li><a class="dropdown-item" href="../../cinemet/traitement/traitement_logout.php">Déconnexion</a></li>
+                                <li><a class="dropdown-item" href="#">Pannel Admin</a></li>
+                            </ul>
+                            </div>
+                        
+                                    
+                              <?php  } else { ?>
+                                    <div class="dropdown">
+                            <button class="btn text-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <?= $_SESSION['pseudo'] ?>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../../cinemet/content/profil.php">Mon Profil</a></li>
+                                <li><a class="dropdown-item" href="../../cinemet/traitement/traitement_logout.php">Déconnexion</a></li>
+                            </ul>
+                            </div>
+                            <?php }
+                    }
+                }else { ?>
+                    <div class="ms-auto d-flex align-items-center">
                     <a href="../../cinemet/content/login.php" type="button" class="btn btn-black text-light">
                         <i class="fa-regular fa-user"></i>
                         <span class="font-text">Connexion</span>
                     </a>
-                </div>
-                <?php
-                if($_SESSION['id']) { ?>
-                <div class="">
-                    <h3 class=""><?php echo $_SESSION['pseudo'] ?></h3>
-                </div>
-                <?php }
+                     </div>
+               <?php }
+
                 ?>
                 
             </div>
