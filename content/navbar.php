@@ -27,6 +27,14 @@
                         <span class="font-text">Connexion</span>
                     </a>
                 </div>
+                <?php
+                if($_SESSION['id']) { ?>
+                <div class="">
+                    <h3 class=""><?php echo $_SESSION['pseudo'] ?></h3>
+                </div>
+                <?php }
+                ?>
+                
             </div>
         </div>
 </nav>
