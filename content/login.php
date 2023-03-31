@@ -20,7 +20,7 @@
 </head>
 
 <?php
-    include 'C:\wamp64\www\cinemet\content\navbar.php';
+  include 'C:\wamp64\www\cinemet\content/navbar.php';
 ?>
 
 <!-- Début Bannière -->

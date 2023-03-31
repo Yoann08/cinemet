@@ -34,7 +34,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="../../cinemet/content/profil.php">Mon Profil</a></li>
                                 <li><a class="dropdown-item" href="../../cinemet/traitement/traitement_logout.php">Déconnexion</a></li>
-                                <li><a class="dropdown-item" href="#">Pannel Admin</a></li>
+                                <li><a class="dropdown-item" href="../../cinemet/content/crud.php">Pannel Admin</a></li>
                             </ul>
                             </div>
                         

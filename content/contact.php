@@ -1,4 +1,4 @@
-<? session_start() ?>
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,7 +20,7 @@
 </head>
 
 <?php
-    include 'C:\wamp64\www\cinemet\content/navbar.php';
+  include 'C:\wamp64\www\cinemet\content/navbar.php';
 ?>
 
 <!-- Début Bannière -->

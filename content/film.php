@@ -1,4 +1,4 @@
-<? session_start() ?>
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,7 +22,7 @@
 <section class="bg-light">
 
 <?php
-    include 'C:\wamp64\www\cinemet\content/navbar.php';
+  include 'C:\wamp64\www\cinemet\content/navbar.php';
 ?>
 
     <div class="container-fluid text-light my-4" id="banner">
