@@ -74,7 +74,7 @@ try{
             frameborder="0" 
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen></iframe></td>
-            <td class="align-middle"><a href="#" class="text-warning">Modifier</a> <br/> <a href="#" class="text-danger">Supprimer</a></td>
+            <td class="align-middle"><a href="#" class="text-warning">Modifier</a> <br/> <a href="../../cinemet/content/form_delete.php?id=<?=$result['Id_Film']?>" class="text-danger">Supprimer</a></td>
           </tr>
 <?php
    }
