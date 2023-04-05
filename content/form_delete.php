@@ -27,7 +27,7 @@ require '../../cinemet/asset/config/connect.php'
 <h1 class="d-flex justify-content-center">Supprimer le film</h1>
 <?php 
     $id = $_GET['id'];
-    var_dump($id);
+    // var_dump($id);
 ?>
 <form action="../../cinemet/traitement/delete.php?Id_Film=<?=$id?>" method="GET">
     <div class="mb-3 visually-hidden">

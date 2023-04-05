@@ -2,7 +2,8 @@
 
 require '../../cinemet/asset/config/connect.php';
 
-var_dump($_GET);
+// var_dump($_GET);
+
 $id = $_GET['id'];
 if(!empty($id)) {
 
